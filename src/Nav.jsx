@@ -35,7 +35,7 @@ export class Nav extends React.Component {
             return <NavMenu key={menu.name+x} menu={menu.name} submenu={menu.list} clicky={this.clicky} />;
         }.bind(this));
         return (
-            <nav>
+            <nav id='navSection' >
                 {test}
             </nav>
         );
@@ -57,10 +57,10 @@ class NavMenu extends React.Component {
             return <NavSubMenu key={submenu+x} menu={this.props.menu} submenu={submenu} onClick={this.handleSubmenuOnClick} />;
         });
         return (
-            <div>
-                <div>{this.props.menu}</div>
+            <ul>
+                <li>{this.props.menu}</li>
                 {submenus}
-            </div>
+            </ul>
         );
     }
 }
@@ -76,6 +76,10 @@ class NavSubMenu extends React.Component {
     }
 
     render() {
-        return <div onClick={this.handleOnClick}>{this.props.submenu}</div>;
+        return (
+            <ul>
+                <li onClick={this.handleOnClick}>{this.props.submenu}</li>
+            </ul>
+        );
     }
 }

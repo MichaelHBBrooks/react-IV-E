@@ -17,6 +17,7 @@ import ReactDOM from 'react-dom';
 import { Header } from './Header.jsx';
 import { Main } from './Main.jsx';
 import { Nav } from './Nav.jsx';
+import '../stylesheets/main.scss';
 
 class Root extends React.Component {
     constructor(props) {
