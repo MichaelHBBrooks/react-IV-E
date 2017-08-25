@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const nav = {
     menus: [{
@@ -36,6 +37,9 @@ export class Nav extends React.Component {
         }.bind(this));
         return (
             <nav id='navSection' >
+                <Link to={'/'}>
+                    Home
+                </Link>
                 {test}
             </nav>
         );
@@ -78,7 +82,11 @@ class NavSubMenu extends React.Component {
     render() {
         return (
             <ul>
-                <li onClick={this.handleOnClick}>{this.props.submenu}</li>
+                <li>
+                    <Link to={'/'+this.props.menu+'/'+this.props.submenu}>
+                        {this.props.submenu}
+                    </Link>
+                </li>
             </ul>
         );
     }
